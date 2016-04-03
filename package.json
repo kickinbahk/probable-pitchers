@@ -1,0 +1,31 @@
+{
+  "name": "probable-pitchers",
+  "version": "1.0.0",
+  "description": "site to get weekly probable pitchers",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kickinbahk/probable-pitchers.git"
+  },
+  "keywords": [
+    "mlb",
+    "pitchers",
+    "probable",
+    "weekly"
+  ],
+  "author": "Josiah Mory",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kickinbahk/probable-pitchers/issues"
+  },
+  "homepage": "https://github.com/kickinbahk/probable-pitchers#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "mlbprobablepitchers": "^0.1.1",
+    "mocha": "^2.4.5",
+    "standard": "^6.0.8"
+  }
+}
