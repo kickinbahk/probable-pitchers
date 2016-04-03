@@ -1,12 +1,11 @@
 var express = require('express')
 var app = express()
+var http = require('http').Server(app)
 
 var PORT = 3000
 
-app.get('/', function (req, res) {
-  res.send(`It's time for Baseball`)
-})
+app.use(express.static(`${__dirname}/public`))
 
-app.listen(PORT, function () {
+http.listen(PORT, function () {
   console.log(`Server listening on ${PORT}`)
 })
