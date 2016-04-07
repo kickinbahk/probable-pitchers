@@ -11,7 +11,7 @@ app.use(express.static(`${__dirname}/public`))
 // var data = appjs
 // console.log(data)
 
-var date = '2016/04/06' // 2016/04/06 (yyyy/mm/dd)
+var date = '2016/04/08' // 2016/04/06 (yyyy/mm/dd)
 var probablePitchers = []
 
 Probables.get(date, function (error, matchup) {
