@@ -8,8 +8,19 @@ var PORT = 3000
 
 app.use(express.static(`${__dirname}/public`))
 
-var data = appjs
-console.log(data)
+var gameData = appjs
+
+gameData.then(function (data) {
+  var allPitchers = []
+  console.log(data)
+  _.find(data, function (p) {
+    allPitchers.push(p.pitchers.away.name)
+  })
+  console.log(allPitchers)
+  return allPitchers
+}).then(function (pitchers) {
+  console.log(pitchers)
+})
 
 http.listen(PORT, function () {
   console.log(`Server listening on ${PORT}`)
