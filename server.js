@@ -8,19 +8,21 @@ var PORT = 3000
 
 app.use(express.static(`${__dirname}/public`))
 
-var gameData = appjs
+appjs()
+// var gameData = appjs
 
-gameData.then(function (data) {
-  var allPitchers = []
-  console.log(data)
-  _.find(data, function (p) {
-    allPitchers.push(p.pitchers.away.name)
-  })
-  console.log(allPitchers)
-  return allPitchers
-}).then(function (pitchers) {
-  console.log(pitchers)
-})
+// gameData.then(function (data) {
+//   var allPitchers = []
+//   _.mapValues(data, function (p) {
+//     console.log(p.pitchers.away.name)
+//     allPitchers.push(p.pitchers)
+//   })
+//   console.log(allPitchers)
+//   return allPitchers
+// }).then(function (pitchers) {
+//   var pitchersGoing = _.mapValues(pitchers, 'name')
+//   console.log(pitchersGoing)
+// })
 
 http.listen(PORT, function () {
   console.log(`Server listening on ${PORT}`)
