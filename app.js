@@ -1,37 +1,100 @@
 var Probables = require('mlbprobablepitchers')
 
-var date = '2016/04/08' // 2016/04/06 (yyyy/mm/dd)
+var date = '2016/04/10' // 2016/04/06 (yyyy/mm/dd)
 
 module.exports = new Promise(function (resolve, reject) {
-  // Probables.get(date, function (error, matchup) {
-  //   if (error) {
-  //     console.log('error')
-  //   } else {
-  //     console.log('Data fetched')
-  //     return matchup
-  //   }
-  // })
-  var gameJSON = {
-    'id': '2011/07/23/houmlb-chnmlb-1',
-    'startTime': '2011-07-23T12:05:00',
-    'easternTime': '2011-07-23T13:05:00',
-    'timezone': 'CDT',
-    'teams': {
-      'away': '112',
-      'home': '117'
-    },
-    'pitchers': {
-      'away': {
-        'id': '434643',
-        'name': 'Wandy Rodriguez',
-        'throws': 'LHP'
-      },
-      'home': {
-        'id': '448694',
-        'name': 'Randy Wells',
-        'throws': 'RHP'
-      }
+  var gameJSON = Probables.get(date, function (error, matchup) {
+    if (error) {
+      console.log('error')
+    } else {
+      console.log('Data fetched')
+      console.log(matchup)
+      return matchup
     }
-  }
+  })
+  //  var gameJSON = [ { id: '2016/04/08/nyamlb-detmlb-1',
+  //   startTime: '2016-04-08T13:10:00',
+  //   easternTime: '2016-04-08T13:10:00',
+  //   timezone: 'EDT',
+  //   teams: { away: '116', home: '147' },
+  //   pitchers: { away: [Object], home: [Object] } },
+  // { id: '2016/04/08/phimlb-nynmlb-1',
+  //   startTime: '2016-04-08T13:10:00',
+  //   easternTime: '2016-04-08T13:10:00',
+  //   timezone: 'EDT',
+  //   teams: { away: '121', home: '143' },
+  //   pitchers: { away: [Object], home: [Object] } },
+  // { id: '2016/04/08/clemlb-chamlb-1',
+  //   startTime: '2016-04-08T15:10:00',
+  //   easternTime: '2016-04-08T16:10:00',
+  //   timezone: 'CDT',
+  //   teams: { away: '145', home: '114' },
+  //   pitchers: { away: [Object], home: [Object] } },
+  // { id: '2016/04/08/sdnmlb-colmlb-1',
+  //   startTime: '2016-04-08T14:10:00',
+  //   easternTime: '2016-04-08T16:10:00',
+  //   timezone: 'MDT',
+  //   teams: { away: '115', home: '135' },
+  //   pitchers: { away: [Object], home: [Object] } },
+  // { id: '2016/04/08/tbamlb-balmlb-1',
+  //   startTime: '2016-04-08T19:05:00',
+  //   easternTime: '2016-04-08T19:05:00',
+  //   timezone: 'EDT',
+  //   teams: { away: '110', home: '139' },
+  //   pitchers: { away: [Object], home: [Object] } },
+  // { id: '2016/04/08/bosmlb-tormlb-1',
+  //   startTime: '2016-04-08T19:07:00',
+  //   easternTime: '2016-04-08T19:07:00',
+  //   timezone: 'EDT',
+  //   teams: { away: '141', home: '111' },
+  //   pitchers: { away: [Object], home: [Object] } },
+  // { id: '2016/04/08/pitmlb-cinmlb-1',
+  //   startTime: '2016-04-08T19:10:00',
+  //   easternTime: '2016-04-08T19:10:00',
+  //   timezone: 'EDT',
+  //   teams: { away: '113', home: '134' },
+  //   pitchers: { away: [Object], home: [Object] } },
+  // { id: '2016/04/08/slnmlb-atlmlb-1',
+  //   startTime: '2016-04-08T19:35:00',
+  //   easternTime: '2016-04-08T19:35:00',
+  //   timezone: 'EDT',
+  //   teams: { away: '144', home: '138' },
+  //   pitchers: { away: [Object], home: [Object] } },
+  // { id: '2016/04/08/houmlb-milmlb-1',
+  //   startTime: '2016-04-08T19:10:00',
+  //   easternTime: '2016-04-08T20:10:00',
+  //   timezone: 'CDT',
+  //   teams: { away: '158', home: '117' },
+  //   pitchers: { away: [Object], home: [Object] } },
+  // { id: '2016/04/08/minmlb-kcamlb-1',
+  //   startTime: '2016-04-08T19:15:00',
+  //   easternTime: '2016-04-08T20:15:00',
+  //   timezone: 'CDT',
+  //   teams: { away: '118', home: '142' },
+  //   pitchers: { away: [Object], home: [Object] } },
+  // { id: '2016/04/08/chnmlb-arimlb-1',
+  //   startTime: '2016-04-08T18:40:00',
+  //   easternTime: '2016-04-08T21:40:00',
+  //   timezone: 'MST',
+  //   teams: { away: '109', home: '112' },
+  //   pitchers: { away: [Object], home: [Object] } },
+  // { id: '2016/04/08/texmlb-anamlb-1',
+  //   startTime: '2016-04-08T19:05:00',
+  //   easternTime: '2016-04-08T22:05:00',
+  //   timezone: 'PDT',
+  //   teams: { away: '108', home: '140' },
+  //   pitchers: { away: [Object], home: [Object] } },
+  // { id: '2016/04/08/oakmlb-seamlb-1',
+  //   startTime: '2016-04-08T19:10:00',
+  //   easternTime: '2016-04-08T22:10:00',
+  //   timezone: 'PDT',
+  //   teams: { away: '136', home: '133' },
+  //   pitchers: { away: [Object], home: [Object] } },
+  // { id: '2016/04/08/lanmlb-sfnmlb-1',
+  //   startTime: '2016-04-08T19:15:00',
+  //   easternTime: '2016-04-08T22:15:00',
+  //   timezone: 'PDT',
+  //   teams: { away: '137', home: '119' },
+  //   pitchers: { away: [Object], home: [Object] } } ]
   resolve(gameJSON)
 })
